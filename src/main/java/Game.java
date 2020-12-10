@@ -6,12 +6,10 @@ import java.util.List;
  */
 public class Game {
     public static final int FRAME_COUNT = 10;
-    private final List<Frame> frames;
     private FramesContainer framesContainer;
 
     public Game() {
         framesContainer = new FramesContainer();
-        frames = framesContainer.getFrames();
     }
 
     public void roll(int pins) {
@@ -39,7 +37,7 @@ public class Game {
     }
 
     private Integer getNextRollPin(int index) {
-        if (index < 9) {
+        if (index <= 8) {
             return framesContainer.getFrame(index + 1).getFirstRollPin();
         } else {
             return framesContainer.getFrame(index).getExtraFirstBallRollPins();
