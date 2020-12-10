@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,16 +16,8 @@ public class Game {
         index = 0;
     }
 
-    private List<Frame> initFrames() {
-        List<Frame> frames = new ArrayList<>();
-        for (int i = 0; i < FRAME_COUNT; i++) {
-            frames.add(new Frame());
-        }
-        return frames;
-    }
-
     public void roll(int pins) {
-        Frame frame = getFrame();
+        Frame frame = framesContainer.getCurrentFrame();
         frame.add(pins);
         setIndex(frame);
     }
@@ -38,10 +29,6 @@ public class Game {
                 index += 1;
             }
         }
-    }
-
-    private Frame getFrame() {
-        return framesContainer.getCurrentFrame();
     }
 
     public Integer score() {
