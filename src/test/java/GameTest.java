@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -51,6 +52,21 @@ public class GameTest {
         game.roll(10);
         game.roll(10);
         assertThat(game.score()).isEqualTo(300);
+    }
+
+    @Test
+    @Disabled
+    void should_score_success_when_all_rolls_are_multiple() {
+        Game game = new Game();
+        game.roll(10);
+
+        game.roll(7);
+        game.roll(3);
+
+        game.roll(9);
+        game.roll(0);
+
+        assertThat(game.score()).isEqualTo(167);
     }
 
 }
