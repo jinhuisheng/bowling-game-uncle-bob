@@ -10,7 +10,7 @@ public class Frame {
     private List<Integer> extraBallsRollPins = new ArrayList<>();
 
     public Integer getRollPins() {
-        return rollPins.stream().reduce(0, (x, y) -> x + y);
+        return rollPins.stream().reduce(0, Integer::sum);
     }
 
     public void add(int pins) {
