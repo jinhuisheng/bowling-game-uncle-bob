@@ -1,4 +1,3 @@
-import java.util.List;
 
 /**
  * @author huisheng.jin
@@ -6,7 +5,7 @@ import java.util.List;
  */
 public class Game {
     public static final int FRAME_COUNT = 10;
-    public static final int EIGHTH_FRAME_INDEX = 8;
+    private static final int EIGHTH_FRAME_INDEX = 8;
     private FramesContainer framesContainer;
 
     public Game() {
@@ -47,16 +46,20 @@ public class Game {
 
     private int getNextNextRollPins(int index) {
         if (index < EIGHTH_FRAME_INDEX) {
-            Frame nextFrame = framesContainer.getFrame(index + 1);
-            if (nextFrame.isStrike()) {
-                return framesContainer.getFrame(index + 2).getFirstRollPin();
-            } else {
-                return framesContainer.getFrame(index + 1).getSecondBallRollPins();
-            }
+            return getNextNextRollPinsWhenIndexLessThanEight(index);
         } else if (index == EIGHTH_FRAME_INDEX) {
             return framesContainer.getFrame(index + 1).getExtraFirstBallRollPins();
         }
         return framesContainer.getFrame(index).getExtraSecondBallRollPins();
+    }
+
+    private int getNextNextRollPinsWhenIndexLessThanEight(int index) {
+        Frame nextFrame = framesContainer.getFrame(index + 1);
+        if (nextFrame.isStrike()) {
+            return framesContainer.getFrame(index + 2).getFirstRollPin();
+        } else {
+            return framesContainer.getFrame(index + 1).getSecondBallRollPins();
+        }
     }
 
 }
