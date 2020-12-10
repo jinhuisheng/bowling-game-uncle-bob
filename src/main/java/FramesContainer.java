@@ -29,4 +29,12 @@ public class FramesContainer {
             }
         }
     }
+
+    public List<Frame> getFrames() {
+        return frames;
+    }
+
+    public Frame getCurrentFrame() {
+        return frames.get(index);
+    }
 }

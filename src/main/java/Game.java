@@ -13,7 +13,7 @@ public class Game {
 
     public Game() {
         framesContainer = new FramesContainer();
-        frames = initFrames();
+        frames = framesContainer.getFrames();
         index = 0;
     }
 
@@ -41,8 +41,7 @@ public class Game {
     }
 
     private Frame getFrame() {
-//        return framesContainer.getFrame()
-        return frames.get(index);
+        return framesContainer.getCurrentFrame();
     }
 
     public Integer score() {
