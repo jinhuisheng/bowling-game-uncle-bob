@@ -9,13 +9,11 @@ public class Game {
 
     private static final int FRAME_COUNT = 10;
     private final List<Frame> frames;
-    private final Integer index;
-    private final Integer rollTimes;
+    private Integer index;
 
     public Game() {
         frames = initFrames();
         index = 0;
-        rollTimes = 0;
     }
 
     private List<Frame> initFrames() {
@@ -29,6 +27,13 @@ public class Game {
     public void roll(int pins) {
         Frame frame = getFrame();
         frame.add(pins);
+        setIndex(frame);
+    }
+
+    private void setIndex(Frame frame) {
+        if (frame.isComplete()) {
+            index += 1;
+        }
     }
 
     private Frame getFrame() {

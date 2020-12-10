@@ -10,4 +10,8 @@ public class Frame {
     public void add(int pins) {
 
     }
+
+    public boolean isComplete() {
+        return false;
+    }
 }
