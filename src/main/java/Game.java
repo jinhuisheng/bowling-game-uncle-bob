@@ -15,9 +15,10 @@ public class Game {
     }
 
     public void roll(int pins) {
-        Frame frame = framesContainer.getCurrentFrame();
-        frame.add(pins);
-        setIndex(frame);
+        framesContainer.roll(pins);
+//        Frame frame = framesContainer.getCurrentFrame();
+//        frame.add(pins);
+//        setIndex(frame);
     }
 
     private void setIndex(Frame frame) {
