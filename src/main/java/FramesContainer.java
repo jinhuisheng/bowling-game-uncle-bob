@@ -22,4 +22,11 @@ public class FramesContainer {
         return frames;
     }
 
+    public void updateIndex(Frame frame) {
+        if (index < 9) {
+            if (frame.isComplete()) {
+                index += 1;
+            }
+        }
+    }
 }
