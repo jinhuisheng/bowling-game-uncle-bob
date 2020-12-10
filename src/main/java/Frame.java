@@ -6,4 +6,8 @@ public class Frame {
     public Integer getRollPins() {
         return 0;
     }
+
+    public void add(int pins) {
+
+    }
 }

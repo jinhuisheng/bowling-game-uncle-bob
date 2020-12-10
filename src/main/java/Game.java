@@ -27,7 +27,12 @@ public class Game {
     }
 
     public void roll(int pins) {
+        Frame frame = getFrame();
+        frame.add(pins);
+    }
 
+    private Frame getFrame() {
+        return new Frame();
     }
 
     public Integer score() {
