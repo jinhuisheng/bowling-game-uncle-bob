@@ -78,6 +78,7 @@ public class GameTest {
         game.roll(6);
 
         game.roll(10);
+
         game.roll(10);
 
         game.roll(10);

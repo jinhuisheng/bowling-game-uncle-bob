@@ -45,7 +45,9 @@ public class Game {
     public Integer score() {
         int score = 0;
         for (int index = 0; index < 10; index++) {
-            score += countFrameScore(index);
+            int temp = countFrameScore(index);
+            score += temp;
+            System.out.println(temp);
         }
         return score;
     }
