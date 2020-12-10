@@ -54,7 +54,7 @@ public class Game {
         if (frames.get(index).isSpare()) {
             return frames.get(index).getRollPins() + getNextRollPin();
         } else if (frames.get(index).isStrike()) {
-            return 30;
+            return frames.get(index).getRollPins() + getNextRollPin() + 10;
         } else {
             return frames.get(index).getRollPins();
         }
