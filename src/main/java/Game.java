@@ -41,6 +41,6 @@ public class Game {
     }
 
     public Integer score() {
-        return frames.stream().map(frame -> frame.getRollPins()).reduce(0, (x, y) -> x + y);
+        return frames.stream().map(Frame::getRollPins).reduce(0, Integer::sum);
     }
 }
