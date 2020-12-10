@@ -6,6 +6,7 @@ import java.util.List;
  * @date 2020/12/11.
  */
 public class FramesContainer {
+    private static final int LAST_FRAME_INDEX = 9;
     private final List<Frame> frames;
     private Integer index;
 
@@ -37,7 +38,7 @@ public class FramesContainer {
     }
 
     private void updateIndex(Frame frame) {
-        if (index < 9) {
+        if (index < LAST_FRAME_INDEX) {
             if (frame.isComplete()) {
                 index += 1;
             }
