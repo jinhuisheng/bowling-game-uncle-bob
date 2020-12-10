@@ -55,7 +55,6 @@ public class GameTest {
     }
 
     @Test
-    @Disabled
     void should_score_success_when_all_rolls_are_multiple() {
         Game game = new Game();
         game.roll(10);
