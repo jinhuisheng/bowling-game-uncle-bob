@@ -54,15 +54,15 @@ public class Game {
 
     private int countFrameScore(int index) {
         if (frames.get(index).isSpare()) {
-            return frames.get(index).getRollPins() + getNextRollPin();
+            return frames.get(index).getRollPins() + getNextRollPin(index);
         } else if (frames.get(index).isStrike()) {
-            return frames.get(index).getRollPins() + getNextRollPin() + getNextNextRollPins();
+            return frames.get(index).getRollPins() + getNextRollPin(index) + getNextNextRollPins(index);
         } else {
             return frames.get(index).getRollPins();
         }
     }
 
-    private int getNextNextRollPins() {
+    private int getNextNextRollPins(int index) {
         if (index < 8) {
             return frames.get(index + 2).getFirstRollPin();
         } else if (index == 8) {
@@ -71,7 +71,7 @@ public class Game {
         return frames.get(index).getExtraSecondBallRollPins();
     }
 
-    private Integer getNextRollPin() {
+    private Integer getNextRollPin(int index) {
         if (index < 9) {
             return frames.get(index + 1).getFirstRollPin();
         } else {
