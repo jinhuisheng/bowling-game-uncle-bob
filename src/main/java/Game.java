@@ -62,8 +62,9 @@ public class Game {
     private Integer getNextRollPin() {
         if (index < 9) {
             return frames.get(index + 1).getFirstRollPin();
+        } else {
+            return frames.get(index).getExtraFirstBallRollPins();
         }
-        return 5;
     }
 
 }

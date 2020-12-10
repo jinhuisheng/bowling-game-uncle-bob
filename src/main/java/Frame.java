@@ -33,4 +33,7 @@ public class Frame {
         return rollPins.get(0);
     }
 
+    public Integer getExtraFirstBallRollPins() {
+        return extraBallsRollPins.get(0);
+    }
 }
