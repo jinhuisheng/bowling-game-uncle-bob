@@ -36,4 +36,8 @@ public class Frame {
     public Integer getExtraFirstBallRollPins() {
         return extraBallsRollPins.get(0);
     }
+
+    public boolean isStrike() {
+        return rollPins.get(0) == 10;
+    }
 }

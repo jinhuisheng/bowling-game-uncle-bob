@@ -55,8 +55,9 @@ public class Game {
             return 30;
         }
         if (frames.get(index).isSpare()) {
-            Integer nextRollPin = getNextRollPin();
-            return frames.get(index).getRollPins() + nextRollPin;
+            return frames.get(index).getRollPins() + getNextRollPin();
+        } else if (frames.get(index).isStrike()) {
+            return 30;
         } else {
             return frames.get(index).getRollPins();
         }
