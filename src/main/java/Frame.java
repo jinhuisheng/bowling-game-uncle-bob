@@ -22,7 +22,7 @@ public class Frame {
     }
 
     public boolean isComplete() {
-        return rollPins.size() == 2;
+        return rollPins.get(0) == 10 || rollPins.size() == 2;
     }
 
     public boolean isSpare() {
