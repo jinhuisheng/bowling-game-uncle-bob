@@ -7,13 +7,23 @@ import java.util.List;
  */
 public class Game {
 
-    private List<Frame> frames;
+    private static final int FRAME_COUNT = 10;
+    private final List<Frame> frames;
+    private final Integer index;
+    private final Integer rollTimes;
 
     public Game() {
-        frames = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        frames = initFrames();
+        index = 0;
+        rollTimes = 0;
+    }
+
+    private List<Frame> initFrames() {
+        List<Frame> frames = new ArrayList<>();
+        for (int i = 0; i < FRAME_COUNT; i++) {
             frames.add(new Frame());
         }
+        return frames;
     }
 
     public void roll(int pins) {
