@@ -41,4 +41,16 @@ public class GameTest {
         assertThat(game.score()).isEqualTo(150);
     }
 
+    @Test
+    void should_score_300_when_all_rolls_are_strike() {
+        Game game = new Game();
+        for (int i = 0; i < 9; i++) {
+            game.roll(10);
+        }
+        game.roll(10);
+        game.roll(10);
+        game.roll(10);
+        assertThat(game.score()).isEqualTo(300);
+    }
+
 }
