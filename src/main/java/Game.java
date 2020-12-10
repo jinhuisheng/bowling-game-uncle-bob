@@ -54,6 +54,10 @@ public class Game {
     }
 
     private int countFrameScore(int index) {
-        return frames.get(index).getRollPins();
+        if (frames.get(index).isSpare()) {
+            return frames.get(index).getRollPins();
+        } else {
+            return frames.get(index).getRollPins();
+        }
     }
 }

@@ -19,4 +19,8 @@ public class Frame {
     public boolean isComplete() {
         return rollPins.size() == 2;
     }
+
+    public boolean isSpare() {
+        return rollPins.size() == 2 && getRollPins() == 10;
+    }
 }
