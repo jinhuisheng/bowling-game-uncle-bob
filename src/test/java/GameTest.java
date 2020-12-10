@@ -66,6 +66,24 @@ public class GameTest {
         game.roll(9);
         game.roll(0);
 
+        game.roll(10);
+
+        game.roll(0);
+        game.roll(8);
+
+        game.roll(8);
+        game.roll(2);
+
+        game.roll(0);
+        game.roll(6);
+
+        game.roll(10);
+        game.roll(10);
+
+        game.roll(10);
+        game.roll(8);
+        game.roll(1);
+
         assertThat(game.score()).isEqualTo(167);
     }
 
