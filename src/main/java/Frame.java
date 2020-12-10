@@ -44,4 +44,8 @@ public class Frame {
     public boolean isStrike() {
         return rollPins.get(0) == 10;
     }
+
+    public int getExtraSecondBallRollPins() {
+        return extraBallsRollPins.get(1);
+    }
 }
