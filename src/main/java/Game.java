@@ -20,7 +20,7 @@ public class Game {
 
     public Integer score() {
         int score = 0;
-        for (int index = 0; index < 10; index++) {
+        for (int index = 0; index < FRAME_COUNT; index++) {
             int temp = countFrameScore(index);
             score += temp;
             System.out.println(temp);
