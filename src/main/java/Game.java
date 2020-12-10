@@ -6,7 +6,7 @@ import java.util.List;
  * @date 2020/12/11.
  */
 public class Game {
-    private static final int FRAME_COUNT = 10;
+    public static final int FRAME_COUNT = 10;
     private final List<Frame> frames;
     private Integer index;
     private FramesContainer framesContainer;
