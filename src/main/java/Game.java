@@ -37,7 +37,7 @@ public class Game {
     }
 
     private Frame getFrame() {
-        return new Frame();
+        return frames.get(index);
     }
 
     public Integer score() {

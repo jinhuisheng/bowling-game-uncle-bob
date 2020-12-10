@@ -17,14 +17,14 @@ public class GameTest {
         assertThat(game.score()).isEqualTo(0);
     }
 
-//    @Test
-//    void should_score_90_when_all_rolls_are_miss() {
-//        Game game = new Game();
-//        for (int i = 0; i < 10; i++) {
-//            game.roll(5);
-//            game.roll(4);
-//        }
-//        assertThat(game.score()).isEqualTo(0);
-//    }
+    @Test
+    void should_score_90_when_all_rolls_are_miss() {
+        Game game = new Game();
+        for (int i = 0; i < 10; i++) {
+            game.roll(5);
+            game.roll(4);
+        }
+        assertThat(game.score()).isEqualTo(90);
+    }
 
 }
