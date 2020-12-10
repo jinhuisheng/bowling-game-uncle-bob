@@ -7,13 +7,18 @@ import java.util.List;
  */
 public class Frame {
     private List<Integer> rollPins = new ArrayList<>();
+    private List<Integer> extraBallsRollPins = new ArrayList<>();
 
     public Integer getRollPins() {
         return rollPins.stream().reduce(0, (x, y) -> x + y);
     }
 
     public void add(int pins) {
-        rollPins.add(pins);
+        if (rollPins.size() < 2) {
+            rollPins.add(pins);
+        } else {
+            extraBallsRollPins.add(pins);
+        }
     }
 
     public boolean isComplete() {
