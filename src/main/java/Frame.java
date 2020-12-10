@@ -7,8 +7,9 @@ import java.util.List;
  */
 public class Frame {
     private List<Integer> rollPins = new ArrayList<>();
+
     public Integer getRollPins() {
-        return rollPins.stream().reduce(0,(x,y)->x+y);
+        return rollPins.stream().reduce(0, (x, y) -> x + y);
     }
 
     public void add(int pins) {
@@ -16,6 +17,6 @@ public class Frame {
     }
 
     public boolean isComplete() {
-        return false;
+        return rollPins.size() == 2;
     }
 }
