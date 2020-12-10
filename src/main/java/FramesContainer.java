@@ -22,18 +22,6 @@ public class FramesContainer {
         return frames;
     }
 
-    public void updateIndex(Frame frame) {
-        if (index < 9) {
-            if (frame.isComplete()) {
-                index += 1;
-            }
-        }
-    }
-
-    public List<Frame> getFrames() {
-        return frames;
-    }
-
     public Frame getCurrentFrame() {
         return frames.get(index);
     }
@@ -42,10 +30,18 @@ public class FramesContainer {
         return frames.get(index);
     }
 
-
     public void roll(int pins) {
         Frame frame = getCurrentFrame();
         frame.add(pins);
         updateIndex(frame);
     }
+
+    private void updateIndex(Frame frame) {
+        if (index < 9) {
+            if (frame.isComplete()) {
+                index += 1;
+            }
+        }
+    }
+
 }
