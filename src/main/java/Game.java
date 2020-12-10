@@ -16,13 +16,6 @@ public class Game {
 
     public void roll(int pins) {
         framesContainer.roll(pins);
-//        Frame frame = framesContainer.getCurrentFrame();
-//        frame.add(pins);
-//        setIndex(frame);
-    }
-
-    private void setIndex(Frame frame) {
-        framesContainer.updateIndex(frame);
     }
 
     public Integer score() {
@@ -36,35 +29,35 @@ public class Game {
     }
 
     private int countFrameScore(int index) {
-        if (frames.get(index).isSpare()) {
-            return frames.get(index).getRollPins() + getNextRollPin(index);
-        } else if (frames.get(index).isStrike()) {
-            return frames.get(index).getRollPins() + getNextRollPin(index) + getNextNextRollPins(index);
+        if (framesContainer.getFrame(index).isSpare()) {
+            return framesContainer.getFrame(index).getRollPins() + getNextRollPin(index);
+        } else if (framesContainer.getFrame(index).isStrike()) {
+            return framesContainer.getFrame(index).getRollPins() + getNextRollPin(index) + getNextNextRollPins(index);
         } else {
-            return frames.get(index).getRollPins();
+            return framesContainer.getFrame(index).getRollPins();
         }
     }
 
     private Integer getNextRollPin(int index) {
         if (index < 9) {
-            return frames.get(index + 1).getFirstRollPin();
+            return framesContainer.getFrame(index + 1).getFirstRollPin();
         } else {
-            return frames.get(index).getExtraFirstBallRollPins();
+            return framesContainer.getFrame(index).getExtraFirstBallRollPins();
         }
     }
 
     private int getNextNextRollPins(int index) {
         if (index < 8) {
-            Frame nextFrame = frames.get(index + 1);
+            Frame nextFrame = framesContainer.getFrame(index + 1);
             if (nextFrame.isStrike()) {
-                return frames.get(index + 2).getFirstRollPin();
+                return framesContainer.getFrame(index + 2).getFirstRollPin();
             } else {
-                return frames.get(index + 1).getSecondBallRollPins();
+                return framesContainer.getFrame(index + 1).getSecondBallRollPins();
             }
         } else if (index == 8) {
-            return frames.get(index + 1).getExtraFirstBallRollPins();
+            return framesContainer.getFrame(index + 1).getExtraFirstBallRollPins();
         }
-        return frames.get(index).getExtraSecondBallRollPins();
+        return framesContainer.getFrame(index).getExtraSecondBallRollPins();
     }
 
 }

@@ -38,6 +38,11 @@ public class FramesContainer {
         return frames.get(index);
     }
 
+    public Frame getFrame(Integer index) {
+        return frames.get(index);
+    }
+
+
     public void roll(int pins) {
         Frame frame = getCurrentFrame();
         frame.add(pins);
