@@ -6,6 +6,7 @@ import java.util.List;
  * @date 2020/12/11.
  */
 public class Frame {
+    public static final int ONE_BALL_PINS_MAX_COUNT = 10;
     private List<Integer> rollPins = new ArrayList<>();
     private List<Integer> extraBallsRollPins = new ArrayList<>();
 
@@ -14,7 +15,7 @@ public class Frame {
     }
 
     public void add(int pins) {
-        if (rollPins.size() == 1 && rollPins.get(0) == 10) {
+        if (rollPins.size() == 1 && isStrike()) {
             extraBallsRollPins.add(pins);
             return;
         }
@@ -29,6 +30,10 @@ public class Frame {
         return rollPins.get(0) == 10 || rollPins.size() == 2;
     }
 
+    public boolean isStrike() {
+        return rollPins.get(0) == 10;
+    }
+
     public boolean isSpare() {
         return rollPins.size() == 2 && getRollPins() == 10;
     }
@@ -39,10 +44,6 @@ public class Frame {
 
     public Integer getExtraFirstBallRollPins() {
         return extraBallsRollPins.get(0);
-    }
-
-    public boolean isStrike() {
-        return rollPins.get(0) == 10;
     }
 
     public int getExtraSecondBallRollPins() {
