@@ -54,6 +54,6 @@ public class Game {
     }
 
     private int countFrameScore(int index) {
-        return 0;
+        return frames.get(index).getRollPins();
     }
 }
