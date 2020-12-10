@@ -14,6 +14,10 @@ public class Frame {
     }
 
     public void add(int pins) {
+        if (rollPins.size() == 1 && rollPins.get(0) == 10) {
+            extraBallsRollPins.add(pins);
+            return;
+        }
         if (rollPins.size() < 2) {
             rollPins.add(pins);
         } else {
