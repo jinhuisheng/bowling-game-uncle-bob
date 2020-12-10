@@ -48,4 +48,8 @@ public class Frame {
     public int getExtraSecondBallRollPins() {
         return extraBallsRollPins.get(1);
     }
+
+    public int getSecondBallRollPins() {
+        return rollPins.get(1);
+    }
 }

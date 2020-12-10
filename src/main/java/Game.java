@@ -62,21 +62,26 @@ public class Game {
         }
     }
 
-    private int getNextNextRollPins(int index) {
-        if (index < 8) {
-            return frames.get(index + 2).getFirstRollPin();
-        } else if (index == 8) {
-            return frames.get(index + 1).getExtraFirstBallRollPins();
-        }
-        return frames.get(index).getExtraSecondBallRollPins();
-    }
-
     private Integer getNextRollPin(int index) {
         if (index < 9) {
             return frames.get(index + 1).getFirstRollPin();
         } else {
             return frames.get(index).getExtraFirstBallRollPins();
         }
+    }
+
+    private int getNextNextRollPins(int index) {
+        if (index < 8) {
+            Frame nextFrame = frames.get(index + 1);
+            if (nextFrame.isStrike()) {
+                return frames.get(index + 2).getFirstRollPin();
+            } else {
+                return frames.get(index + 1).getSecondBallRollPins();
+            }
+        } else if (index == 8) {
+            return frames.get(index + 1).getExtraFirstBallRollPins();
+        }
+        return frames.get(index).getExtraSecondBallRollPins();
     }
 
 }
