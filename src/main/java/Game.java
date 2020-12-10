@@ -7,13 +7,11 @@ import java.util.List;
 public class Game {
     public static final int FRAME_COUNT = 10;
     private final List<Frame> frames;
-    private Integer index;
     private FramesContainer framesContainer;
 
     public Game() {
         framesContainer = new FramesContainer();
         frames = framesContainer.getFrames();
-        index = 0;
     }
 
     public void roll(int pins) {
