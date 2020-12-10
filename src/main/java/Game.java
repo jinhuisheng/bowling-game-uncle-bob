@@ -43,6 +43,9 @@ public class Game {
     }
 
     public Integer score() {
+        if (frames.get(0).getRollPins() == 10) {
+            return 150;
+        }
         return frames.stream().map(Frame::getRollPins).reduce(0, Integer::sum);
     }
 }

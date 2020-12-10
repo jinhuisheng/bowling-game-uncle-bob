@@ -27,4 +27,18 @@ public class GameTest {
         assertThat(game.score()).isEqualTo(90);
     }
 
+
+    @Test
+    void should_score_150_when_all_rolls_are_spare() {
+        Game game = new Game();
+        for (int i = 0; i < 9; i++) {
+            game.roll(5);
+            game.roll(5);
+        }
+        game.roll(5);
+        game.roll(5);
+        game.roll(5);
+        assertThat(game.score()).isEqualTo(150);
+    }
+
 }
