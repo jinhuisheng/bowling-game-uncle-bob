@@ -31,8 +31,10 @@ public class Game {
     }
 
     private void setIndex(Frame frame) {
-        if (frame.isComplete()) {
-            index += 1;
+        if (index < 9) {
+            if (frame.isComplete()) {
+                index += 1;
+            }
         }
     }
 
