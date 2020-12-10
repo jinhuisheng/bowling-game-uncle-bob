@@ -28,4 +28,9 @@ public class Frame {
     public boolean isSpare() {
         return rollPins.size() == 2 && getRollPins() == 10;
     }
+
+    public Integer getFirstRollPin() {
+        return rollPins.get(0);
+    }
+
 }
