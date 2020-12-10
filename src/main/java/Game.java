@@ -24,11 +24,6 @@ public class Game {
 
     private void setIndex(Frame frame) {
         framesContainer.updateIndex(frame);
-        if (index < 9) {
-            if (frame.isComplete()) {
-                index += 1;
-            }
-        }
     }
 
     public Integer score() {
