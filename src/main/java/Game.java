@@ -43,15 +43,11 @@ public class Game {
     }
 
     public Integer score() {
-//        if (frames.get(0).getRollPins() == 10) {
-//            return 150;
-//        }
         int score = 0;
         for (int index = 0; index < 10; index++) {
             score += countFrameScore(index);
         }
         return score;
-//        return frames.stream().map(Frame::getRollPins).reduce(0, Integer::sum);
     }
 
     private int countFrameScore(int index) {
