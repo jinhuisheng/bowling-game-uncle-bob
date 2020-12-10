@@ -50,7 +50,8 @@ public class Game {
         for (int index = 0; index < 10; index++) {
             score += countFrameScore(index);
         }
-        return frames.stream().map(Frame::getRollPins).reduce(0, Integer::sum);
+        return score;
+//        return frames.stream().map(Frame::getRollPins).reduce(0, Integer::sum);
     }
 
     private int countFrameScore(int index) {
