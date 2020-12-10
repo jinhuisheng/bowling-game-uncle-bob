@@ -54,10 +54,19 @@ public class Game {
         if (frames.get(index).isSpare()) {
             return frames.get(index).getRollPins() + getNextRollPin();
         } else if (frames.get(index).isStrike()) {
-            return frames.get(index).getRollPins() + getNextRollPin() + 10;
+            return frames.get(index).getRollPins() + getNextRollPin() + getNextNextRollPins();
         } else {
             return frames.get(index).getRollPins();
         }
+    }
+
+    private int getNextNextRollPins() {
+        if (index < 8) {
+            return frames.get(index + 2).getFirstRollPin();
+        } else if (index == 8) {
+            return frames.get(index + 1).getExtraFirstBallRollPins();
+        }
+        return 10;
     }
 
     private Integer getNextRollPin() {
